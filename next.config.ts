@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // let phones on the local network load dev assets (http://<mac-ip>:3050)
+  allowedDevOrigins: ["10.0.0.173", "*.local"],
 };
 
 export default nextConfig;

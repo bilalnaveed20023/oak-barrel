@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { gsap, ScrollTrigger, mq } from "@/lib/motion";
 import { revealLines, revealMasked, useSectionMotion } from "@/lib/reveal";
-import { GALLERY, SITE } from "@/lib/content";
+import { GALLERY, SITE, asset } from "@/lib/content";
 
 /**
  * Vertical scroll → horizontal track. Each photo parallaxes inside its
@@ -105,7 +105,7 @@ export default function Gallery() {
             <div className="gcard__tilt" data-tilt>
               <div className="frame gcard__frame" data-frame>
                 <div className="gcard__img" data-img>
-                  <Image src={g.src} alt={g.caption} fill sizes="(max-width: 767px) 80vw, 40vw" />
+                  <Image src={asset(g.src)} alt={g.caption} fill sizes="(max-width: 767px) 80vw, 40vw" />
                 </div>
               </div>
             </div>

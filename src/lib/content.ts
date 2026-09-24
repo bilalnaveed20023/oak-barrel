@@ -122,3 +122,6 @@ export const STATS = [
   { value: 2, prefix: "", suffix: " AM", label: "Last call on Fridays & Saturdays." },
   { value: 7, prefix: "$", suffix: "", label: "Martinis at Girls Dinner — Wednesdays, after 5." },
 ];
+
+/** Prefix a /public path with the deploy base path (GitHub Pages serves from /oak-barrel). */
+export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;

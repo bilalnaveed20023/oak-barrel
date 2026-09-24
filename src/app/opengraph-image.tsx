@@ -5,6 +5,7 @@ import { join } from "node:path";
 export const alt = "The Oak Barrel — 166 Oak Street, Wyandotte, Michigan";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+export const dynamic = "force-static";
 
 export default async function OG() {
   // Satori needs TTF/OTF/WOFF; woff2 isn't supported, so fall back to a system serif if unavailable

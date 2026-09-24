@@ -32,7 +32,7 @@ const description =
   "Handcrafted cocktails, exclusive distillates and fine wines on Oak Street, Wyandotte. Live music Wednesday to Saturday, private events and premium bottle service.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.oakbarrelbar.com"),
+  metadataBase: new URL(process.env.SITE_URL ?? "https://www.oakbarrelbar.com"),
   title,
   description,
   applicationName: "The Oak Barrel",

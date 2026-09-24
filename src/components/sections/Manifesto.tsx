@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { gsap, SplitText } from "@/lib/motion";
 import { parallax, revealImage, revealMasked, useSectionMotion } from "@/lib/reveal";
+import { asset } from "@/lib/content";
 
 /** Words reveal one-by-one, scrubbed to scroll (opacity + blur + lift). */
 export default function Manifesto() {
@@ -54,7 +55,7 @@ export default function Manifesto() {
         <div className="frame" data-frame>
           <div className="frame__inner" data-img>
             {/* placeholder (CC0 stock) — swap for a real photo of the room; see PLACEHOLDER-PHOTOS.md */}
-            <Image src="/img/stock-bourbon-shelves.jpg" alt="Wooden back-bar shelves lined with bourbon and whiskey bottles in low light" fill sizes="(max-width: 767px) 52vw, 22vw" />
+            <Image src={asset("/img/stock-bourbon-shelves.jpg")} alt="Wooden back-bar shelves lined with bourbon and whiskey bottles in low light" fill sizes="(max-width: 767px) 52vw, 22vw" />
           </div>
         </div>
         <figcaption className="eyebrow">The top shelf</figcaption>

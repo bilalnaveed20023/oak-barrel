@@ -74,6 +74,7 @@ export default function Reserve() {
     <div
       ref={root}
       className="reserve"
+      data-lenis-prevent
       role="dialog"
       aria-modal="true"
       aria-labelledby="reserve-title"
@@ -82,7 +83,7 @@ export default function Reserve() {
     >
       <div className="reserve__panel" data-panel>
         <button ref={closeBtn} className="reserve__close eyebrow" onClick={() => setOpen(false)} aria-label="Close reservations">
-          Close <span aria-hidden="true">✕</span>
+          <span className="reserve__close-text">Close</span> <span aria-hidden="true">✕</span>
         </button>
 
         <div className="reserve__copy">

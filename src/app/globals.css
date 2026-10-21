@@ -1350,7 +1350,8 @@ em {
   opacity: 0;
   background: rgb(4 10 7 / 0.72);
   display: flex;
-  align-items: center;
+  /* "safe" keeps the top reachable when the panel is taller than the window */
+  align-items: safe center;
   justify-content: center;
   padding: var(--gutter);
   overflow-y: auto;
@@ -1479,6 +1480,48 @@ em {
   margin-top: 14px;
 }
 
+/* laptops and short browser windows: tighten so the whole panel fits */
+@media (min-width: 861px) and (max-height: 860px) {
+  .reserve {
+    padding: 16px var(--gutter);
+  }
+  .reserve__panel {
+    padding: 28px 48px;
+    gap: 48px;
+    align-items: center;
+  }
+  .reserve__close {
+    top: 6px;
+    right: 6px;
+    width: 44px;
+    justify-content: center;
+  }
+  .reserve__close-text {
+    display: none;
+  }
+  .reserve__panel {
+    padding-right: 64px;
+  }
+  .reserve__copy {
+    gap: 12px;
+  }
+  .reserve__title {
+    font-size: clamp(40px, 4.6vw, 72px);
+  }
+  .reserve__note {
+    font-size: 16px;
+  }
+  .reserve__hours {
+    margin-top: 4px;
+  }
+  .reserve__hours div {
+    padding: 7px 0;
+  }
+  .reserve__widget {
+    padding-top: 24px;
+  }
+}
+
 @media (max-width: 860px) {
   .reserve {
     align-items: flex-start;
@@ -1498,5 +1541,24 @@ em {
   }
   .reserve__title {
     font-size: clamp(48px, 13vw, 72px);
+  }
+}
+@media (min-width: 861px) and (max-height: 700px) {
+  .reserve {
+    padding: 10px var(--gutter);
+  }
+  .reserve__panel {
+    padding: 18px 64px 18px 40px;
+  }
+  .reserve__widget {
+    padding-top: 0;
+    gap: 8px;
+  }
+  .reserve__title {
+    font-size: clamp(36px, 4.2vw, 60px);
+  }
+  .reserve__hours div {
+    padding: 5px 0;
+    font-size: 13px;
   }
 }

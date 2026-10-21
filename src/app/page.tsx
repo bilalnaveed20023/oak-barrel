@@ -7,6 +7,7 @@ import Gallery from "@/components/sections/Gallery";
 import Stats from "@/components/sections/Stats";
 import Closing from "@/components/sections/Closing";
 import Footer from "@/components/sections/Footer";
+import Reserve from "@/components/Reserve";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Closing />
       </main>
       <Footer />
+      <Reserve />
       <Experience />
     </>
   );

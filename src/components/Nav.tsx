@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { app, onReady, scrollToTarget } from "@/lib/app";
+import { app, onReady, openReserve, scrollToTarget } from "@/lib/app";
 import { gsap, prefersReduced } from "@/lib/motion";
 import { SITE } from "@/lib/content";
 import Magnetic from "./ui/Magnetic";
@@ -95,7 +95,7 @@ export default function Nav() {
         </nav>
         <div className="nav__cta">
           <Magnetic strength={0.3}>
-            <a className="btn btn--sm" href={SITE.tel}>
+            <a className="btn btn--sm" href={SITE.tel} onClick={(e) => { e.preventDefault(); openReserve(); }}>
               <RollLabel>Reserve</RollLabel>
             </a>
           </Magnetic>
@@ -131,6 +131,21 @@ export default function Nav() {
         <div className="menu__foot">
           <span className="mask"><span data-menu-line className="eyebrow">{SITE.street}, {SITE.city}</span></span>
           <span className="mask"><a data-menu-line className="eyebrow" href={SITE.tel} tabIndex={open ? 0 : -1}>{SITE.phone}</a></span>
+          <span className="mask menu__reserve">
+            <a
+              data-menu-line
+              className="btn"
+              href={SITE.tel}
+              tabIndex={open ? 0 : -1}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+                window.setTimeout(openReserve, 350);
+              }}
+            >
+              Reserve a table
+            </a>
+          </span>
         </div>
       </div>
     </>

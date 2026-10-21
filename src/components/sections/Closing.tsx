@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { revealLines, revealMasked, useSectionMotion } from "@/lib/reveal";
 import { HOURS_LIST, SITE } from "@/lib/content";
+import { openReserve } from "@/lib/app";
 import Magnetic from "../ui/Magnetic";
 import RollLabel from "../ui/RollLabel";
 
@@ -30,7 +31,7 @@ export default function Closing() {
         </p>
         <div className="closing__buttons">
           <Magnetic strength={0.4} radius={110}>
-            <a className="btn btn--lg" href={SITE.tel}>
+            <a className="btn btn--lg" href={SITE.tel} onClick={(e) => { e.preventDefault(); openReserve(); }}>
               <RollLabel>Book your table</RollLabel>
               <span className="btn__arrow" aria-hidden="true">→</span>
             </a>

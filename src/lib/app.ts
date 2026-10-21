@@ -73,3 +73,8 @@ export function scrollToTarget(target: string | number) {
     window.scrollTo({ top: target, behavior: "smooth" });
   }
 }
+
+/** Open the reservation panel from anywhere (nav, closing CTA, menu). */
+export function openReserve() {
+  window.dispatchEvent(new Event("oak:reserve"));
+}

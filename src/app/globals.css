@@ -991,6 +991,10 @@ em {
   gap: 14px;
   padding-right: 4vw;
 }
+.gallery__credit {
+  margin-top: 18px;
+  color: rgb(241 235 221 / 0.4);
+}
 .gallery__ig {
   font-size: clamp(36px, 4vw, 72px);
   font-style: italic;

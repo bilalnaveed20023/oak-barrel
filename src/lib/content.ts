@@ -106,14 +106,14 @@ export const FEATURES = [
   },
 ];
 
-/** CC0 stock placeholders until the bar's own photography is ready (see PLACEHOLDER-PHOTOS.md). */
+/** Food & Wine photography, used with permission (see PLACEHOLDER-PHOTOS.md). Captions stay generic: these aren't the bar's own recipes. */
 export const GALLERY = [
-  { src: "/img/g-gin-tonic.jpg", w: 960, h: 600, caption: "Gin & tonic", note: "Lemon, juniper, one big ice", shape: "wide" },
-  { src: "/img/g-martini.jpg", w: 655, h: 873, caption: "Stirred, not shy", note: "Straight up", shape: "tall" },
-  { src: "/img/g-manhattan.jpg", w: 1024, h: 640, caption: "From the back bar", note: "Rye, vermouth, patience", shape: "wide" },
-  { src: "/img/g-pink-smash.jpg", w: 960, h: 1280, caption: "Something bright", note: "Crushed ice, fresh fruit", shape: "tall" },
-  { src: "/img/g-spritz.jpg", w: 768, h: 1024, caption: "The long one", note: "For the early evening", shape: "tall" },
-  { src: "/img/g-pink-gin.jpg", w: 1024, h: 640, caption: "Late pour", note: "When the room gets loud", shape: "wide" },
+  { src: "/img/fw-lovesick-crocodile.jpg", w: 1500, h: 937, caption: "Golden hour", note: "Stirred, garnished, glowing", shape: "wide" },
+  { src: "/img/fw-miso-mary.jpg", w: 750, h: 1000, caption: "The long one", note: "Tall glass, big ice", shape: "tall" },
+  { src: "/img/fw-marasca-fizz.jpg", w: 1500, h: 937, caption: "A round of fizz", note: "For the whole table", shape: "wide" },
+  { src: "/img/fw-caprese-martini.jpg", w: 750, h: 1000, caption: "Straight up", note: "Cold glass, no rush", shape: "tall" },
+  { src: "/img/fw-mumbai-margarita.jpg", w: 750, h: 1000, caption: "Shaken hard", note: "Salt, spice, lime", shape: "tall" },
+  { src: "/img/fw-chrysanthemum.jpg", w: 1500, h: 937, caption: "Late pour", note: "When the room gets loud", shape: "wide" },
 ] as const;
 
 export const STATS = [

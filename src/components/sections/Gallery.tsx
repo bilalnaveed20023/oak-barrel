@@ -122,6 +122,7 @@ export default function Gallery() {
           <a className="gallery__ig display ulink" href={SITE.instagram} target="_blank" rel="noopener noreferrer">
             @oakbarrelwyandotte
           </a>
+          <span className="eyebrow gallery__credit">Cocktail photography courtesy of Food &amp; Wine</span>
         </div>
       </div>
     </section>

@@ -3,13 +3,9 @@ import localFont from "next/font/local";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
+// Art Deco pair chosen with the owner: Limelight for display, Federo for everything else
 const display = localFont({
-  src: [
-    { path: "../fonts/Boska-400.woff2", weight: "400", style: "normal" },
-    { path: "../fonts/Boska-400i.woff2", weight: "400", style: "italic" },
-    { path: "../fonts/Boska-500.woff2", weight: "500", style: "normal" },
-    { path: "../fonts/Boska-500i.woff2", weight: "500", style: "italic" },
-  ],
+  src: [{ path: "../fonts/Limelight-400.woff2", weight: "400", style: "normal" }],
   variable: "--font-display",
   display: "swap",
   preload: true,
@@ -17,11 +13,7 @@ const display = localFont({
 });
 
 const body = localFont({
-  src: [
-    { path: "../fonts/GeneralSans-400.woff2", weight: "400", style: "normal" },
-    { path: "../fonts/GeneralSans-500.woff2", weight: "500", style: "normal" },
-    { path: "../fonts/GeneralSans-600.woff2", weight: "600", style: "normal" },
-  ],
+  src: [{ path: "../fonts/Federo-400.woff2", weight: "400", style: "normal" }],
   variable: "--font-body",
   display: "swap",
   fallback: ["Helvetica Neue", "Arial", "sans-serif"],

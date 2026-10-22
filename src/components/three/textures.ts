@@ -188,17 +188,21 @@ export function headTexture(size: number, fontFamily: string, anisotropy = 4) {
     ctx.arc(cx, cy, R * 0.52, 0, Math.PI * 2);
     ctx.stroke();
 
-    ctx.font = `italic 400 ${size * 0.07}px ${fontFamily}`;
-    ctx.fillText("The", cx, cy - size * 0.12);
-    ctx.font = `500 ${size * 0.16}px ${fontFamily}`;
-    ctx.fillText("Oak", cx, cy + size * 0.0);
-    ctx.font = `500 ${size * 0.045}px ${fontFamily}`;
-    const word = "B A R R E L";
-    ctx.fillText(word, cx, cy + size * 0.12);
+    // Art Deco lockup: THE between rules, OAK, spaced BARREL, double rule
+    const bodyFamily = getComputedStyle(document.body).getPropertyValue("--font-body").trim() || "sans-serif";
+    ctx.font = `400 ${size * 0.05}px ${bodyFamily}`;
+    ctx.fillText("T H E", cx, cy - size * 0.17);
+    ctx.fillRect(cx - size * 0.19, cy - size * 0.172, size * 0.085, size * 0.004);
+    ctx.fillRect(cx + size * 0.105, cy - size * 0.172, size * 0.085, size * 0.004);
+    ctx.font = `400 ${size * 0.17}px ${fontFamily}`;
+    ctx.fillText("OAK", cx, cy - size * 0.02);
+    ctx.font = `400 ${size * 0.066}px ${fontFamily}`;
+    ctx.fillText("B A R R E L", cx, cy + size * 0.105);
+    ctx.fillRect(cx - size * 0.13, cy + size * 0.158, size * 0.26, size * 0.004);
+    ctx.fillRect(cx - size * 0.085, cy + size * 0.172, size * 0.17, size * 0.0025);
 
-    // text on a circle
     const ring = "WYANDOTTE · MICHIGAN · 166 OAK STREET · ";
-    ctx.font = `500 ${size * 0.034}px ${fontFamily}`;
+    ctx.font = `400 ${size * 0.032}px ${getComputedStyle(document.body).getPropertyValue("--font-body").trim() || "sans-serif"}`;
     const rr = R * 0.62;
     const step = (Math.PI * 2) / ring.length;
     for (let i = 0; i < ring.length; i++) {

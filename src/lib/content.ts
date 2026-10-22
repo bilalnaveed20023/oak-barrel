@@ -126,17 +126,3 @@ export const STATS = [
 /** Prefix a /public path with the deploy base path (GitHub Pages serves from /oak-barrel). */
 export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
-/**
- * OpenTable reservations.
- * Set `rid` to the bar's OpenTable restaurant ID (from the owner's OpenTable
- * account → "Reservation widget" embed code, the `rid=` value) to go live.
- * While it's null the widget shows in preview mode with a click guard, so
- * nobody can book at the placeholder restaurant.
- */
-export const OPENTABLE = {
-  rid: null as string | null,
-  previewRid: "1",
-};
-
-export const openTableLoaderUrl = (rid: string) =>
-  `https://www.opentable.com/widget/reservation/loader?rid=${encodeURIComponent(rid)}&type=standard&theme=tall&color=1&dark=false&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website&cfe=true`;

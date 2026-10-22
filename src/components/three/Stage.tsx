@@ -49,10 +49,8 @@ function useDisplayFont() {
   useEffect(() => {
     const fam = getComputedStyle(document.body).getPropertyValue("--font-display").trim() || "serif";
     const done = () => setFamily(fam);
-    Promise.all([
-      document.fonts.load(`500 64px ${fam}`),
-      document.fonts.load(`italic 400 64px ${fam}`),
-    ])
+    const body = getComputedStyle(document.body).getPropertyValue("--font-body").trim() || "sans-serif";
+    Promise.all([document.fonts.load(`400 64px ${fam}`), document.fonts.load(`400 64px ${body}`)])
       .then(done, done);
     // never let a slow font hold up the barrel
     const t = window.setTimeout(done, 1200);

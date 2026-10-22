@@ -39,6 +39,7 @@ html {
 
 body {
   margin: 0;
+  font-synthesis: none;
   background: var(--ink);
   color: var(--ivory);
   font-family: var(--font-body-stack);
@@ -96,18 +97,18 @@ img {
 .display {
   font-family: var(--font-display-stack);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: 0.01em;
   line-height: 0.88;
   font-kerning: normal;
   font-feature-settings: "kern", "liga";
 }
 .display em,
 em {
-  font-style: italic;
+  font-style: normal;
   font-family: var(--font-display-stack);
 }
 .display em {
-  letter-spacing: -0.045em;
+  color: var(--gold-2);
 }
 .gold {
   color: var(--gold-2);
@@ -119,7 +120,7 @@ em {
   line-height: 1.4;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   color: var(--ivory-dim);
 }
@@ -213,7 +214,7 @@ em {
 .preloader__num {
   font-size: clamp(110px, 24vw, 360px);
   line-height: 0.8;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.01em;
   color: var(--ivory);
   font-variant-numeric: tabular-nums;
 }
@@ -252,7 +253,7 @@ em {
   border-radius: 999px;
   border: 1px solid rgb(241 235 221 / 0.28);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ivory);
@@ -362,10 +363,10 @@ em {
   position: absolute;
   inset: 0;
   color: var(--gold-2);
-  font-style: italic;
+  font-style: normal;
   font-family: var(--font-display-stack);
   font-size: 1.08em;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   white-space: nowrap;
   clip-path: inset(0 100% 0 0);
   transition: clip-path 0.6s var(--ease);
@@ -430,7 +431,7 @@ em {
 }
 .nav__brand .display {
   font-size: 26px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   line-height: 1;
 }
 .nav__brand-small {
@@ -460,7 +461,7 @@ em {
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   height: 44px;
   padding: 0 4px;
 }
@@ -542,8 +543,8 @@ em {
 .hero__title {
   align-self: center;
   margin: 0;
-  font-size: clamp(64px, 13.4vw, 280px);
-  line-height: 0.84;
+  font-size: clamp(56px, 9.6vw, 210px);
+  line-height: 0.9;
   display: flex;
   flex-direction: column;
 }
@@ -595,6 +596,7 @@ em {
   display: none;
 }
 .hero__copy {
+  min-width: 0;
   margin: 0;
   max-width: 34ch;
   color: var(--ivory-dim);
@@ -607,7 +609,7 @@ em {
 
 @media (max-width: 767px) {
   .hero__title {
-    font-size: 15.4vw;
+    font-size: 11.4vw;
     line-height: 0.9;
     align-self: start;
     margin-top: 4vh;
@@ -656,9 +658,9 @@ em {
 .manifesto__text {
   grid-column: 3 / 13;
   margin: 0;
-  font-size: clamp(34px, 4.7vw, 92px);
-  line-height: 1.02;
-  letter-spacing: -0.028em;
+  font-size: clamp(30px, 3.6vw, 68px);
+  line-height: 1.12;
+  letter-spacing: 0.01em;
   text-indent: 12%;
 }
 .manifesto__text em {
@@ -716,7 +718,7 @@ em {
   }
   .manifesto__text {
     grid-column: 1;
-    font-size: clamp(30px, 9vw, 48px);
+    font-size: clamp(26px, 7.4vw, 40px);
     text-indent: 0;
   }
   .manifesto__sign {
@@ -911,8 +913,8 @@ em {
 }
 .gallery__title {
   margin: 0;
-  font-size: clamp(64px, 8.4vw, 170px);
-  line-height: 0.86;
+  font-size: clamp(52px, 6vw, 120px);
+  line-height: 0.95;
 }
 .gallery__title em {
   color: var(--gold-2);
@@ -978,7 +980,7 @@ em {
 }
 .gcard__title {
   font-size: clamp(22px, 1.9vw, 34px);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   line-height: 1.05;
 }
 .gcard__note {
@@ -997,7 +999,7 @@ em {
 }
 .gallery__ig {
   font-size: clamp(36px, 4vw, 72px);
-  font-style: italic;
+  font-style: normal;
   line-height: 1;
 }
 
@@ -1031,7 +1033,7 @@ em {
   font-size: 44vw;
   line-height: 0.8;
   color: rgb(14 59 44 / 0.06);
-  font-style: italic;
+  font-style: normal;
   pointer-events: none;
   user-select: none;
 }
@@ -1087,7 +1089,7 @@ em {
   display: inline-block;
   font-size: clamp(110px, 14vw, 260px);
   line-height: 0.8;
-  letter-spacing: -0.055em;
+  letter-spacing: 0.01em;
   color: var(--emerald);
   font-variant-numeric: tabular-nums lining-nums;
 }
@@ -1095,9 +1097,9 @@ em {
   font-size: clamp(140px, 23vw, 440px);
 }
 .stat__affix {
-  font-style: italic;
+  font-style: normal;
   font-size: 0.42em;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   vertical-align: 0.9em;
   margin: 0 0.06em;
 }
@@ -1269,9 +1271,9 @@ em {
 .footer__wordmark {
   position: relative;
   margin: 14vh 0 4vh;
-  font-size: 24.8vw;
+  font-size: 13.4vw;
   line-height: 0.78;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.01em;
   white-space: nowrap;
 }
 .footer__wordmark .mask {
@@ -1284,7 +1286,7 @@ em {
 @media (hover: hover) {
   .footer__wordmark [data-wm]:hover {
     color: var(--gold-2);
-    font-style: italic;
+    font-style: normal;
   }
 }
 .footer__the {
@@ -1363,39 +1365,41 @@ em {
 }
 .reserve__panel {
   position: relative;
-  width: min(1040px, 100%);
+  width: min(1060px, 100%);
   margin: auto;
   background: var(--emerald-deep);
   border: 1px solid rgb(201 162 94 / 0.28);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(28px, 5vw, 72px);
-  padding: clamp(28px, 5vw, 64px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+  gap: clamp(28px, 5vw, 64px);
+  padding: clamp(28px, 5vw, 60px);
 }
 .reserve__close {
   position: absolute;
-  top: 18px;
-  right: 20px;
+  top: 14px;
+  right: 14px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   min-height: 44px;
-  padding: 0 4px;
+  min-width: 44px;
+  padding: 0 6px;
   color: var(--ivory);
 }
-.reserve__close span {
+.reserve__close span[aria-hidden] {
   font-size: 14px;
   transition: transform 0.5s var(--ease);
 }
 @media (hover: hover) {
-  .reserve__close:hover span {
+  .reserve__close:hover span[aria-hidden] {
     transform: rotate(90deg);
   }
 }
 .reserve__copy {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
   min-width: 0;
 }
 .reserve__eyebrow {
@@ -1403,127 +1407,241 @@ em {
 }
 .reserve__title {
   margin: 0;
-  font-size: clamp(48px, 6vw, 96px);
-  line-height: 0.9;
-}
-.reserve__title em {
-  color: var(--gold-2);
+  font-size: clamp(42px, 5.2vw, 80px);
+  line-height: 0.95;
 }
 .reserve__note {
-  margin: 6px 0 0;
-  max-width: 38ch;
+  margin: 4px 0 0;
+  max-width: 40ch;
   color: var(--ivory-dim);
 }
-.reserve__call {
-  font-family: var(--font-display-stack);
-  font-size: clamp(22px, 2vw, 30px);
-  letter-spacing: -0.01em;
+.reserve__contact {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+  border-top: 1px solid var(--ivory-faint);
+}
+.reserve__line {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--ivory-faint);
+  min-width: 0;
+}
+.reserve__line .eyebrow {
+  color: var(--gold);
+}
+.reserve__big {
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.15;
+  color: var(--ivory);
+  transition: color var(--hover) var(--ease);
+  overflow-wrap: anywhere;
+}
+.reserve__big--email {
+  font-size: clamp(20px, 2vw, 28px);
+}
+@media (hover: hover) {
+  a.reserve__line:hover .reserve__big,
+  .reserve__big--email:hover {
+    color: var(--gold-2);
+  }
+}
+.reserve__email-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.reserve__copy-btn {
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid rgb(201 162 94 / 0.45);
+  border-radius: 999px;
+  color: var(--gold-2);
+  transition: background-color var(--hover) var(--ease), color var(--hover) var(--ease);
+}
+@media (hover: hover) {
+  .reserve__copy-btn:hover {
+    background: var(--gold-2);
+    color: var(--ink);
+  }
 }
 .reserve__hours {
-  margin: 10px 0 0;
-  max-width: 380px;
+  margin: 6px 0 0;
+  max-width: 420px;
 }
 .reserve__hours div {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px 0;
+  padding: 8px 0;
   border-top: 1px solid var(--ivory-faint);
   font-size: 14px;
 }
 .reserve__hours dd {
   margin: 0;
 }
-.reserve__widget {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding-top: 36px;
-}
-.reserve__frame {
+
+/* request card: a framed deco "ticket" */
+.reserve__card {
   position: relative;
-  width: 288px;
-  min-height: 490px;
-  background: var(--ivory);
-  border-radius: 6px;
-  overflow: hidden;
-}
-.reserve__slot iframe {
-  display: block;
-  max-width: 100%;
-}
-.reserve__guard {
-  position: absolute;
-  inset: 0;
+  align-self: start;
+  margin-top: 36px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 6px;
-  padding: 22px 18px;
-  text-align: center;
-  background: linear-gradient(to bottom, rgb(7 19 14 / 0) 35%, rgb(7 19 14 / 0.92) 78%);
-  color: var(--ivory);
+  gap: 18px;
+  padding: 28px 26px 24px;
+  background: var(--ink);
+  border: 1px solid rgb(201 162 94 / 0.5);
+  outline: 1px solid rgb(201 162 94 / 0.25);
+  outline-offset: 6px;
 }
-.reserve__guard .eyebrow {
+.reserve__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
   color: var(--gold-2);
 }
-.reserve__guard-title {
-  font-size: 30px;
+.reserve__card-head .eyebrow {
+  color: var(--gold-2);
+}
+.reserve__diamond {
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+.reserve__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.reserve__field legend {
+  padding: 0;
+  margin-bottom: 8px;
+}
+.reserve__field .eyebrow {
+  color: var(--ivory-dim);
+}
+.reserve__nights {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+}
+.reserve__night {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 7px 0 6px;
+  border: 1px solid var(--ivory-faint);
+  color: var(--ivory);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color var(--hover) var(--ease), background-color var(--hover) var(--ease), color var(--hover) var(--ease);
+}
+.reserve__night b {
+  font-family: var(--font-display-stack);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0;
   line-height: 1;
 }
-.reserve__guard-cta {
-  font-size: 14px;
+.reserve__night:disabled {
+  color: rgb(241 235 221 / 0.22);
+  border-color: rgb(241 235 221 / 0.06);
+  cursor: not-allowed;
+}
+.reserve__night.is-on {
+  background: var(--gold-2);
+  border-color: var(--gold-2);
+  color: var(--ink);
+}
+@media (hover: hover) {
+  .reserve__night:not(:disabled):not(.is-on):hover {
+    border-color: var(--gold);
+  }
+}
+.reserve__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+}
+.reserve__card select,
+.reserve__card input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  background: transparent;
+  border: 1px solid var(--ivory-faint);
+  border-radius: 0;
+  color: var(--ivory);
+  font: inherit;
+  font-size: 16px;
+  appearance: none;
+  transition: border-color var(--hover) var(--ease);
+}
+.reserve__card select {
+  background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+.reserve__card select option {
+  color: #111;
+}
+.reserve__card input::placeholder {
+  color: rgb(241 235 221 / 0.3);
+}
+.reserve__card select:focus,
+.reserve__card input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.reserve__stepper {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  border: 1px solid var(--ivory-faint);
+}
+.reserve__stepper button {
+  width: 42px;
+  height: 100%;
+  color: var(--gold-2);
+  font-size: 20px;
+}
+.reserve__stepper span {
+  min-width: 34px;
+  text-align: center;
+  font-family: var(--font-display-stack);
+  font-size: 20px;
+}
+.reserve__hint,
+.reserve__fine {
+  margin: 0;
+  font-size: 13px;
   color: var(--ivory-dim);
 }
-.reserve__powered {
-  color: var(--ivory-dim);
+.reserve__error {
+  margin: 0;
+  font-size: 14px;
+  color: #f0a58f;
+}
+.reserve__send {
+  justify-content: center;
+  width: 100%;
+  height: 58px;
 }
 .menu__reserve {
   margin-top: 14px;
-}
-
-/* laptops and short browser windows: tighten so the whole panel fits */
-@media (min-width: 861px) and (max-height: 860px) {
-  .reserve {
-    padding: 16px var(--gutter);
-  }
-  .reserve__panel {
-    padding: 28px 48px;
-    gap: 48px;
-    align-items: center;
-  }
-  .reserve__close {
-    top: 6px;
-    right: 6px;
-    width: 44px;
-    justify-content: center;
-  }
-  .reserve__close-text {
-    display: none;
-  }
-  .reserve__panel {
-    padding-right: 64px;
-  }
-  .reserve__copy {
-    gap: 12px;
-  }
-  .reserve__title {
-    font-size: clamp(40px, 4.6vw, 72px);
-  }
-  .reserve__note {
-    font-size: 16px;
-  }
-  .reserve__hours {
-    margin-top: 4px;
-  }
-  .reserve__hours div {
-    padding: 7px 0;
-  }
-  .reserve__widget {
-    padding-top: 24px;
-  }
 }
 
 @media (max-width: 860px) {
@@ -1537,32 +1655,49 @@ em {
     border: 0;
     padding: calc(64px + env(safe-area-inset-top)) var(--gutter) calc(40px + env(safe-area-inset-bottom));
   }
-  .reserve__widget {
-    padding-top: 0;
+  .reserve__card {
+    margin-top: 6px;
   }
   .reserve__hours {
     display: none;
   }
-  .reserve__title {
-    font-size: clamp(48px, 13vw, 72px);
-  }
 }
-@media (min-width: 861px) and (max-height: 700px) {
+
+/* laptops and short browser windows: tighten so the whole panel fits */
+@media (min-width: 861px) and (max-height: 860px) {
   .reserve {
-    padding: 10px var(--gutter);
+    padding: 14px var(--gutter);
   }
   .reserve__panel {
-    padding: 18px 64px 18px 40px;
+    padding: 28px 44px;
+    gap: 44px;
   }
-  .reserve__widget {
-    padding-top: 0;
-    gap: 8px;
+  .reserve__close {
+    top: 6px;
+    right: 6px;
+  }
+  .reserve__close-text {
+    display: none;
+  }
+  .reserve__copy {
+    gap: 12px;
   }
   .reserve__title {
-    font-size: clamp(36px, 4.2vw, 60px);
+    font-size: clamp(38px, 4.4vw, 64px);
+  }
+  .reserve__line {
+    padding: 10px 0;
   }
   .reserve__hours div {
-    padding: 5px 0;
+    padding: 6px 0;
     font-size: 13px;
+  }
+  .reserve__card {
+    margin-top: 24px;
+    gap: 14px;
+    padding: 22px 22px 20px;
+  }
+  .reserve__send {
+    height: 52px;
   }
 }

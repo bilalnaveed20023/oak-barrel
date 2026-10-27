@@ -65,7 +65,7 @@ const jsonLd = {
   name: "The Oak Barrel",
   url: "https://www.oakbarrelbar.com",
   telephone: "+1-313-456-9909",
-  email: "info@prime166.com",
+  email: "theoakbarrelwyandotte@gmail.com",
   servesCuisine: "Cocktails, whiskey, wine",
   address: {
     "@type": "PostalAddress",
@@ -75,9 +75,8 @@ const jsonLd = {
     addressCountry: "US",
   },
   openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Wednesday", "Thursday"], opens: "17:00", closes: "00:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday", "Saturday"], opens: "17:00", closes: "02:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "15:00", closes: "21:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"], opens: "15:00", closes: "00:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday", "Saturday"], opens: "15:00", closes: "02:00" },
   ],
   sameAs: ["https://www.instagram.com/oakbarrelwyandotte/", "https://www.facebook.com/profile.php?id=100066416667255"],
 };

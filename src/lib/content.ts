@@ -8,7 +8,7 @@ export const SITE = {
   country: "US",
   phone: "+1 313-456-9909",
   tel: "tel:+13134569909",
-  email: "info@prime166.com",
+  email: "theoakbarrelwyandotte@gmail.com",
   instagram: "https://www.instagram.com/oakbarrelwyandotte/",
   facebook: "https://www.facebook.com/profile.php?id=100066416667255",
   maps: "https://maps.google.com/?q=166+Oak+Street,+Wyandotte,+MI",
@@ -17,20 +17,19 @@ export const SITE = {
 
 /** 0 = Sunday. [openHour, closeHour] in local (America/Detroit) time; close may pass midnight. */
 export const HOURS: Record<number, [number, number] | null> = {
-  0: [15, 21],
-  1: null,
-  2: null,
-  3: [17, 24],
-  4: [17, 24],
-  5: [17, 26],
-  6: [17, 26],
+  0: null,
+  1: [15, 24],
+  2: [15, 24],
+  3: [15, 24],
+  4: [15, 24],
+  5: [15, 26],
+  6: [15, 26],
 };
 
 export const HOURS_LIST = [
-  { days: "Wednesday — Thursday", time: "5 PM — 12 AM" },
-  { days: "Friday — Saturday", time: "5 PM — 2 AM" },
-  { days: "Sunday", time: "3 PM — 9 PM" },
-  { days: "Monday — Tuesday", time: "Closed" },
+  { days: "Monday — Thursday", time: "3 PM — 12 AM" },
+  { days: "Friday — Saturday", time: "3 PM — 2 AM" },
+  { days: "Sunday", time: "Closed" },
 ];
 
 const DAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];

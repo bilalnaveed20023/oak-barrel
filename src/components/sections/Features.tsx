@@ -48,20 +48,42 @@ export default function Features() {
       current = next;
       counter.textContent = FEATURES[next].n;
       idxItems.forEach((el, i) => el.classList.toggle("is-active", i === next));
+
+      // any panel that isn't involved in this switch disappears immediately,
+      // so fast scrolling can never leave stray text on screen
+      panels.forEach((p, i) => {
+        if (i === next || i === prev) return;
+        gsap.killTweensOf(p);
+        gsap.set(p, { autoAlpha: 0, y: 0 });
+      });
+
+      // the outgoing panel fades away first...
       if (prev >= 0) {
-        const o = partsOf(panels[prev]);
-        gsap.to([...o.lines, ...o.body], { yPercent: -118 * dir, rotate: -3 * dir, duration: 0.8, stagger: 0.04, ease: "expo.out", overwrite: true });
-        gsap.to(o.rule, { scaleX: 0, transformOrigin: dir > 0 ? "100% 50%" : "0% 50%", duration: 0.7, ease: "expo.out", overwrite: true });
-        gsap.set(panels[prev], { autoAlpha: 0, delay: 0.8 });
+        const out = panels[prev];
+        gsap.killTweensOf(out);
+        gsap.to(out, {
+          autoAlpha: 0,
+          y: -14 * dir,
+          duration: 0.3,
+          ease: "power2.out",
+          onComplete: () => {
+            gsap.set(out, { y: 0 });
+          },
+        });
       }
-      const n = partsOf(panels[next]);
-      gsap.set(panels[next], { autoAlpha: 1, overwrite: true });
+
+      // ...and the incoming one reveals after it has cleared
+      const inc = panels[next];
+      const n = partsOf(inc);
+      gsap.killTweensOf(inc);
+      gsap.set(inc, { autoAlpha: 1, y: 0 });
+      const delay = prev >= 0 ? 0.3 : 0;
       gsap.fromTo(
         [...n.lines, ...n.body],
         { yPercent: 118 * dir, rotate: 3 * dir },
-        { yPercent: 0, rotate: 0, duration: 1.3, stagger: 0.075, delay: prev >= 0 ? 0.18 : 0, ease: "expo.out", overwrite: true }
+        { yPercent: 0, rotate: 0, duration: 1.2, stagger: 0.07, delay, ease: "expo.out", overwrite: true }
       );
-      gsap.fromTo(n.rule, { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.4, delay: 0.3, ease: "expo.out", overwrite: true });
+      gsap.fromTo(n.rule, { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.3, delay: delay + 0.1, ease: "expo.out", overwrite: true });
     };
 
     ScrollTrigger.create({

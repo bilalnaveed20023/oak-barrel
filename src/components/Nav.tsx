@@ -4,11 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { app, onReady, openReserve, scrollToTarget } from "@/lib/app";
 import { gsap, prefersReduced } from "@/lib/motion";
 import { SITE } from "@/lib/content";
-import Magnetic from "./ui/Magnetic";
-import RollLabel from "./ui/RollLabel";
 
 const LINKS = [
   { href: "#features", label: "Drinks" },
+  { href: "#drink-menu", label: "Menu" },
   { href: "#gallery", label: "Gallery" },
   { href: "#stats", label: "Nights" },
   { href: "#closing", label: "Visit" },
@@ -94,28 +93,21 @@ export default function Nav() {
           ))}
         </nav>
         <div className="nav__cta">
-          <Magnetic strength={0.3}>
-            <a className="btn btn--sm" href={SITE.tel} onClick={(e) => { e.preventDefault(); openReserve(); }}>
-              <RollLabel>Reserve</RollLabel>
-            </a>
-          </Magnetic>
+          <a className="btn btn--sm" href={SITE.tel} onClick={(e) => { e.preventDefault(); openReserve(); }}>
+            Reserve
+          </a>
           <button
             className="nav__menu"
             aria-expanded={open}
-            aria-controls="menu"
+            aria-controls="site-menu"
             onClick={() => setOpen((o) => !o)}
           >
-            <span className="roll" style={{ height: "1.2em" }}>
-              <span className={`roll__track ${open ? "is-rolled" : ""}`}>
-                <span className="roll__a">Menu</span>
-                <span className="roll__b">Close</span>
-              </span>
-            </span>
+            {open ? "Close" : "Menu"}
           </button>
         </div>
       </header>
 
-      <div ref={overlay} id="menu" className="menu" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden={!open}>
+      <div ref={overlay} id="site-menu" className="menu" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden={!open}>
         <nav className="menu__links">
           {LINKS.map((l, i) => (
             <a key={l.href} href={l.href} onClick={go(l.href)} tabIndex={open ? 0 : -1}>

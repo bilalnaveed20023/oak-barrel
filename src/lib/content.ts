@@ -126,3 +126,32 @@ export const STATS = [
 /** Prefix a /public path with the deploy base path (GitHub Pages serves from /oak-barrel). */
 export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
+
+/** Transcribed from the bar's printed menu (Classic Cocktails + Fall Features). */
+export type MenuItem = { name: string; price: number; desc: string; note?: string; tag?: string };
+
+export const MENU: { classics: MenuItem[]; fall: MenuItem[] } = {
+  classics: [
+    { name: "Classic Mojito", price: 12, desc: "White rum, fresh lime, simple syrup, fresh mint." },
+    { name: "Old Fashioned", price: 13, desc: "Bourbon, aromatic bitters, sugar, orange twist.", note: "Smoked +$1" },
+    { name: "Manhattan", price: 13, desc: "Rye whiskey, sweet vermouth, aromatic bitters." },
+    { name: "New York Sour", price: 13, desc: "Bourbon, fresh lemon, simple syrup, Cabernet Sauvignon float." },
+    { name: "Moscow Mule", price: 10, desc: "Vodka, fresh lime, ginger beer." },
+    { name: "Dirty Martini", price: 13, desc: "Gin or vodka, olive brine." },
+    { name: "Espresso Martini", price: 13, desc: "Vodka, espresso, coffee liqueur, vanilla." },
+    { name: "Negroni", price: 12, desc: "Gin, Campari, sweet vermouth, orange twist." },
+    { name: "Bourbon Smash", price: 12, desc: "Bourbon, fresh lemon, strawberry purée, simple syrup." },
+    { name: "Margarita", price: 11, desc: "Tequila, fresh lime, agave, orange liqueur." },
+    { name: "Paloma", price: 11, desc: "Tequila, fresh lime, grapefruit juice, soda water." },
+    { name: "Aperol Spritz", price: 11, desc: "Aperol, prosecco, soda water, orange slice." },
+    { name: "Bee’s Knees", price: 13, desc: "Gin, honey syrup, fresh lemon." },
+    { name: "Oak Revolver", price: 14, desc: "Bourbon, espresso, coffee liqueur, orange bitters, orange slice." },
+  ],
+  fall: [
+    { name: "The Saturn", price: 14, desc: "Gin, passion fruit, fresh lemon, orgeat, falernum.", tag: "Nitro-infused · On tap" },
+    { name: "Suffering Bastard", price: 14, desc: "Gin, brandy, fresh lime, aromatic bitters, ginger syrup, soda water." },
+    { name: "Cider Paloma", price: 14, desc: "Tequila, apple cider, fresh lime, grapefruit juice, soda water." },
+    { name: "Pumpkin Spiced Espresso Martini", price: 15, desc: "Vodka, espresso, coffee liqueur, pumpkin spice syrup." },
+    { name: "Peach Bourbon Smash", price: 16, desc: "Brown butter-washed house bourbon blend, peach, fresh lemon, mint." },
+  ],
+};

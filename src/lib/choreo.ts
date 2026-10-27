@@ -150,6 +150,13 @@ export function buildChoreo() {
   // The gallery is an opaque layer above the canvas: while it fully covers
   // the viewport there is nothing to draw, so the render loop sleeps.
   hiddenRanges = [[gal.start + 2, gal.end - 2]];
+  // the menu card is opaque too and follows the gallery directly
+  const menu = document.querySelector<HTMLElement>("#drink-menu");
+  if (menu) {
+    const r = menu.getBoundingClientRect();
+    const bottom = r.bottom + window.scrollY;
+    hiddenRanges.push([gal.end - 2, bottom - vh - 2]);
+  }
   floatRanges = [
     [-Infinity, vh * 0.9],
     [closing - vh * 0.4, Infinity],

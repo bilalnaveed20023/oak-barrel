@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
 import Features from "@/components/sections/Features";
 import Gallery from "@/components/sections/Gallery";
+import DrinkMenu from "@/components/sections/DrinkMenu";
 import Stats from "@/components/sections/Stats";
 import Closing from "@/components/sections/Closing";
 import Footer from "@/components/sections/Footer";
@@ -19,6 +20,7 @@ export default function Home() {
         <Manifesto />
         <Features />
         <Gallery />
+        <DrinkMenu />
         <Stats />
         <Closing />
       </main>

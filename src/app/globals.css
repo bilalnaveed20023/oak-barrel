@@ -1740,3 +1740,260 @@ em {
     font-size: clamp(32px, 9vw, 48px);
   }
 }
+
+/* ───────────────────────── menu (bill of fare) ───────────────────────── */
+.bill {
+  --parchment: #efe4cb;
+  --parchment-2: #e6d7b6;
+  --ink-green: #17281f;
+  --burgundy: #7a2318;
+  --rule: #b49a68;
+  position: relative;
+  z-index: 30;
+  background: var(--emerald-deep);
+  padding: 18vh var(--gutter) 16vh;
+}
+.bill__intro {
+  max-width: 1180px;
+  margin: 0 auto 7vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.bill__heading {
+  margin: 0;
+  font-size: clamp(44px, 5.4vw, 96px);
+  line-height: 1;
+}
+.bill__card {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(36px, 5vw, 76px) clamp(22px, 5vw, 80px);
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgb(255 255 255 / 0.35), transparent 60%),
+    radial-gradient(100% 100% at 50% 100%, rgb(120 90 40 / 0.18), transparent 70%),
+    var(--parchment);
+  color: var(--ink-green);
+  box-shadow: 0 40px 80px rgb(0 0 0 / 0.45);
+}
+.bill__frame {
+  position: absolute;
+  inset: 14px;
+  border: 2px solid var(--ink-green);
+  outline: 1px solid rgb(23 40 31 / 0.5);
+  outline-offset: -8px;
+  pointer-events: none;
+}
+.bill__cardhead {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+.bill__rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+.bill__rule i {
+  flex: 1;
+  max-width: 180px;
+  height: 1.5px;
+  background: var(--ink-green);
+}
+.bill__rule b {
+  width: 8px;
+  height: 8px;
+  background: var(--ink-green);
+  transform: rotate(45deg);
+}
+.bill__brand {
+  font-family: var(--font-brand-stack);
+  font-size: clamp(30px, 3.6vw, 52px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 0 6px;
+}
+.bill__section {
+  margin: 0;
+  font-family: var(--font-display-stack);
+  font-weight: 700;
+  font-size: clamp(15px, 1.4vw, 20px);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.bill__cols {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(20px, 3.4vw, 56px);
+}
+.bill__divider {
+  width: 1px;
+  background: linear-gradient(var(--rule), var(--rule)) center / 1px 100% no-repeat;
+}
+.bill__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2vw, 26px);
+}
+.bill__row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.bill__name {
+  margin: 0;
+  font-family: var(--font-display-stack);
+  font-weight: 700;
+  font-size: clamp(17px, 1.45vw, 21px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.bill__tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--ink-green);
+  color: var(--parchment);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateY(-2px);
+}
+.bill__price {
+  margin-left: auto;
+  padding-left: 14px;
+  border-left: 1px solid var(--rule);
+  font-family: var(--font-display-stack);
+  font-weight: 700;
+  font-size: clamp(17px, 1.45vw, 21px);
+  white-space: nowrap;
+}
+.bill__desc {
+  margin: 4px 0 0;
+  max-width: 44ch;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: rgb(23 40 31 / 0.82);
+}
+.bill__note {
+  white-space: nowrap;
+}
+.bill__fall {
+  position: relative;
+  margin-top: clamp(40px, 5vw, 64px);
+  padding: clamp(26px, 3.4vw, 42px) clamp(18px, 3.4vw, 46px);
+  border: 2px solid var(--burgundy);
+  outline: 1px solid rgb(122 35 24 / 0.45);
+  outline-offset: -8px;
+  background: rgb(122 35 24 / 0.035);
+}
+.bill__rule--fall i,
+.bill__rule--fall b {
+  background: var(--burgundy);
+}
+.bill__fall-title {
+  font-family: var(--font-brand-stack);
+  font-size: clamp(28px, 3.2vw, 46px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--burgundy);
+  line-height: 1;
+  padding: 0 6px;
+}
+.bill__list--fall {
+  margin-top: clamp(22px, 3vw, 34px);
+  gap: 0;
+}
+.bill__list--fall .bill__item {
+  padding: 14px 0;
+  border-top: 1px solid rgb(180 154 104 / 0.6);
+}
+.bill__list--fall .bill__item:first-child {
+  border-top: 0;
+}
+.bill__list--fall .bill__desc {
+  max-width: none;
+}
+.bill__foot {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: clamp(28px, 3.4vw, 44px);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(23 40 31 / 0.7);
+}
+.bill__foot a {
+  color: var(--ink-green);
+}
+
+@media (max-width: 767px) {
+  .bill {
+    padding: 14vh 0 12vh;
+  }
+  .bill__intro {
+    padding: 0 var(--gutter);
+  }
+  .bill__frame {
+    inset: 8px;
+  }
+  .bill__cols {
+    grid-template-columns: 1fr;
+    gap: clamp(18px, 2vw, 26px);
+  }
+  .bill__divider {
+    display: none;
+  }
+  .bill__row {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .bill__name {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .bill__price {
+    order: 2;
+  }
+  /* name + price on line one, tag forced onto line two */
+  .bill__row::after {
+    content: "";
+    order: 3;
+    flex-basis: 100%;
+    height: 0;
+  }
+  .bill__tag {
+    order: 4;
+  }
+  .bill__rule--fall i {
+    display: none;
+  }
+  .bill__fall-title {
+    font-size: 26px;
+    white-space: nowrap;
+  }
+  .bill__brand {
+    font-size: 26px;
+    white-space: nowrap;
+  }
+  .bill__desc {
+    font-size: 15px;
+  }
+}

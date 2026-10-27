@@ -47,7 +47,7 @@ const KEYS: (keyof Pose)[] = ["x", "y", "z", "s", "rx", "ry", "rz", "mood", "f",
 function useDisplayFont() {
   const [family, setFamily] = useState<string | null>(null);
   useEffect(() => {
-    const fam = getComputedStyle(document.body).getPropertyValue("--font-display").trim() || "serif";
+    const fam = getComputedStyle(document.body).getPropertyValue("--font-brand").trim() || "serif";
     const done = () => setFamily(fam);
     const body = getComputedStyle(document.body).getPropertyValue("--font-body").trim() || "sans-serif";
     Promise.all([document.fonts.load(`400 64px ${fam}`), document.fonts.load(`400 64px ${body}`)])

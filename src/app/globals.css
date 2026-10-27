@@ -19,6 +19,7 @@
   --gutter: clamp(16px, 4vw, 64px);
   --nav-h: 76px;
 
+  --font-brand-stack: var(--font-brand), Georgia, serif;
   --font-display-stack: var(--font-display), Georgia, serif;
   --font-body-stack: var(--font-body), "Helvetica Neue", Arial, sans-serif;
 }
@@ -96,8 +97,8 @@ img {
 /* ───────────────────────── type ───────────────────────── */
 .display {
   font-family: var(--font-display-stack);
-  font-weight: 400;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   line-height: 0.88;
   font-kerning: normal;
   font-feature-settings: "kern", "liga";
@@ -105,7 +106,7 @@ img {
 .display em,
 em {
   font-style: normal;
-  font-family: var(--font-display-stack);
+  font-family: inherit;
 }
 .display em {
   color: var(--gold-2);
@@ -120,7 +121,7 @@ em {
   line-height: 1.4;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   color: var(--ivory-dim);
 }
@@ -1699,5 +1700,43 @@ em {
   }
   .reserve__send {
     height: 52px;
+  }
+}
+
+/* signage moments in Rye capitals, like the title on the bar's printed menu */
+.nav__brand .display,
+.hero__title,
+.closing__title,
+.footer__wordmark,
+.reserve__title {
+  font-family: var(--font-brand-stack);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.hero__title {
+  font-size: clamp(48px, 7.4vw, 160px);
+  line-height: 0.98;
+}
+.closing__title {
+  font-size: clamp(60px, 10.6vw, 220px);
+  line-height: 0.95;
+}
+.footer__wordmark {
+  font-size: 12.4vw;
+}
+.reserve__title {
+  font-size: clamp(36px, 4.2vw, 64px);
+  line-height: 1.02;
+}
+@media (max-width: 767px) {
+  .hero__title {
+    font-size: 9.2vw;
+  }
+  .closing__title {
+    font-size: 13.6vw;
+  }
+  .reserve__title {
+    font-size: clamp(32px, 9vw, 48px);
   }
 }

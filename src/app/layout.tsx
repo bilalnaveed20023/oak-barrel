@@ -3,9 +3,18 @@ import localFont from "next/font/local";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
-// Art Deco pair chosen with the owner: Limelight for display, Federo for everything else
+// Matched to the bar's printed menu: Rye for the signage-style title moments,
+// Domine (variable 400–700) for headings and text, like the menu's names and descriptions.
+const brand = localFont({
+  src: [{ path: "../fonts/Rye-400.woff2", weight: "400", style: "normal" }],
+  variable: "--font-brand",
+  display: "swap",
+  preload: true,
+  fallback: ["Georgia", "serif"],
+});
+
 const display = localFont({
-  src: [{ path: "../fonts/Limelight-400.woff2", weight: "400", style: "normal" }],
+  src: [{ path: "../fonts/Domine-var.woff2", weight: "400 700", style: "normal" }],
   variable: "--font-display",
   display: "swap",
   preload: true,
@@ -13,10 +22,10 @@ const display = localFont({
 });
 
 const body = localFont({
-  src: [{ path: "../fonts/Federo-400.woff2", weight: "400", style: "normal" }],
+  src: [{ path: "../fonts/Domine-var.woff2", weight: "400 700", style: "normal" }],
   variable: "--font-body",
   display: "swap",
-  fallback: ["Helvetica Neue", "Arial", "sans-serif"],
+  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 const title = "The Oak Barrel — Cocktail & Whiskey Bar in Wyandotte, MI";
@@ -75,7 +84,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${brand.variable} ${display.variable} ${body.variable}`}>
       <body>
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

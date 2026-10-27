@@ -105,14 +105,12 @@ export const FEATURES = [
   },
 ];
 
-/** Food & Wine photography, used with permission (see PLACEHOLDER-PHOTOS.md). Captions stay generic: these aren't the bar's own recipes. */
+/** The bar's own photography. `pos` is the object-position used when a frame crops the photo. */
 export const GALLERY = [
-  { src: "/img/fw-lovesick-crocodile.jpg", w: 1500, h: 937, caption: "Golden hour", note: "Stirred, garnished, glowing", shape: "wide" },
-  { src: "/img/fw-miso-mary.jpg", w: 750, h: 1000, caption: "The long one", note: "Tall glass, big ice", shape: "tall" },
-  { src: "/img/fw-marasca-fizz.jpg", w: 1500, h: 937, caption: "A round of fizz", note: "For the whole table", shape: "wide" },
-  { src: "/img/fw-caprese-martini.jpg", w: 750, h: 1000, caption: "Straight up", note: "Cold glass, no rush", shape: "tall" },
-  { src: "/img/fw-mumbai-margarita.jpg", w: 750, h: 1000, caption: "Shaken hard", note: "Salt, spice, lime", shape: "tall" },
-  { src: "/img/fw-chrysanthemum.jpg", w: 1500, h: 937, caption: "Late pour", note: "When the room gets loud", shape: "wide" },
+  { src: "/img/bar-setup.jpg", w: 1320, h: 1277, caption: "Behind the bar", note: "Bitters, strainers, jiggers, ready", shape: "wide", pos: "50% 72%" },
+  { src: "/img/peel-and-cherry.jpg", w: 1320, h: 1318, caption: "Peel & cherry", note: "Garnished by hand", shape: "tall", pos: "50% 50%" },
+  { src: "/img/stirred.jpg", w: 1320, h: 1318, caption: "Stirred, not rushed", note: "Big ice, slow spoon", shape: "tall", pos: "50% 50%" },
+  { src: "/img/espresso-martini.jpg", w: 1320, h: 1306, caption: "Espresso Martini", note: "Vodka, espresso, coffee liqueur", shape: "tall", pos: "60% 50%" },
 ] as const;
 
 export const STATS = [

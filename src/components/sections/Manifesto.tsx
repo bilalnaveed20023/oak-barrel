@@ -54,11 +54,10 @@ export default function Manifesto() {
       <figure className="manifesto__img" data-speed="1.14">
         <div className="frame" data-frame>
           <div className="frame__inner" data-img>
-            {/* placeholder (CC0 stock) — swap for a real photo of the room; see PLACEHOLDER-PHOTOS.md */}
-            <Image src={asset("/img/stock-bourbon-shelves.jpg")} alt="Wooden back-bar shelves lined with bourbon and whiskey bottles in low light" fill sizes="(max-width: 767px) 52vw, 22vw" />
+            <Image src={asset("/img/the-lounge.jpg")} alt="The Oak Barrel lounge: green velvet chairs, gold chandeliers and the long wooden bar" fill sizes="(max-width: 767px) 52vw, 22vw" />
           </div>
         </div>
-        <figcaption className="eyebrow">The top shelf</figcaption>
+        <figcaption className="eyebrow">The lounge</figcaption>
       </figure>
     </section>
   );

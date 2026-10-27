@@ -105,7 +105,7 @@ export default function Gallery() {
             <div className="gcard__tilt" data-tilt>
               <div className="frame gcard__frame" data-frame>
                 <div className="gcard__img" data-img>
-                  <Image src={asset(g.src)} alt={g.caption} fill sizes="(max-width: 767px) 80vw, 40vw" />
+                  <Image src={asset(g.src)} alt={g.caption} fill sizes="(max-width: 767px) 80vw, 40vw" style={{ objectPosition: g.pos }} />
                 </div>
               </div>
             </div>
@@ -122,7 +122,6 @@ export default function Gallery() {
           <a className="gallery__ig display ulink" href={SITE.instagram} target="_blank" rel="noopener noreferrer">
             @oakbarrelwyandotte
           </a>
-          <span className="eyebrow gallery__credit">Cocktail photography courtesy of Food &amp; Wine</span>
         </div>
       </div>
     </section>

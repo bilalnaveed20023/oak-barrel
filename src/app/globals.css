@@ -515,9 +515,12 @@ em {
   }
 }
 @media (max-width: 420px) {
-  .nav__cta .magnetic {
+  .nav__cta .btn {
     display: none;
   }
+}
+.nav__brand {
+  white-space: nowrap;
 }
 
 /* ───────────────────────── hero ───────────────────────── */
